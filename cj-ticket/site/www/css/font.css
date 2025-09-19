@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "SB";
+  src: url("/common/font/SB-L.woff2") format("woff2"), url("/common/font/SB-L.woff") format("woff"); /* optional fallback */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SB";
+  src: url("/common/font/SB-M.woff2") format("woff2"), url("/common/font/SB-M.woff") format("woff"); /* optional fallback */
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SB";
+  src: url("/common/font/SB-B.woff2") format("woff2"), url("/common/font/SB-B.woff") format("woff"); /* optional fallback */
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "EDB";
+  src: url("/common/font/EDB-R.woff2") format("woff2"), url("/common/font/EDB-R.woff") format("woff"); /* optional fallback */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "EDB";
+  src: url("/common/font/EDB-B.woff2") format("woff2"), url("/common/font/EDB-B.woff") format("woff"); /* optional fallback */
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*# sourceMappingURL=font.css.map */

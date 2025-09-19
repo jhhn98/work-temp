@@ -1,0 +1,922 @@
+.boardGroup .more span, .reservationList .controller button span, .reservationFind h3, .mainContentGroup .event button em, .mainContentGroup .event h3, .mainContentGroup .reservationSearchWeather .search-wrap button[type=submit] span, .mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon i, .mainContentGroup .reservationSearchWeather h3, main > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.boardGroup .more {
+  justify-content: center;
+  align-items: center;
+}
+
+.boardGroup h3, .reservationList h3 {
+  color: #1d2845;
+}
+
+.boardGroup .tab-button span {
+  font-family: SB;
+}
+
+.boardGroup h3, .reservationList h3 {
+  font-family: SB;
+  font-weight: 700;
+}
+
+body {
+  background: #f9fafc;
+}
+
+.mainBg {
+  position: absolute;
+  top: 322px;
+  left: 21px;
+  z-index: 0;
+}
+.mainBg::before, .mainBg::after {
+  display: block;
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(100px);
+}
+.mainBg::before {
+  top: 0;
+  left: 0;
+  background: #0cc291;
+}
+.mainBg::after {
+  top: 111px;
+  left: 73px;
+  background: #2179e0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding: 30px 0 0;
+}
+main::before {
+  display: block;
+  position: absolute;
+  top: 205px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 622px;
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 90%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 218px 218px 0 0;
+}
+.mainContentGroup .colgroup1 {
+  display: flex;
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto 30px;
+}
+.mainContentGroup .reservationSearchWeather {
+  flex: 0 0 42.48366013%;
+  position: relative;
+  margin: 0 8.496732% 0 0;
+}
+.mainContentGroup .reservationSearchWeather strong {
+  display: block;
+  flex: 0 0 calc(100% - 180px);
+  height: 47px;
+  margin: 60px 0 30px;
+  color: #1d2845;
+  font-family: SB;
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 47px;
+}
+.mainContentGroup .reservationSearchWeather strong span {
+  color: #009991;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 180px;
+  height: 62px;
+  padding: 0 0 0 75px;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 62px;
+  height: 62px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.01);
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 82px;
+  height: 82px;
+  background: url(../images/main/sprite-iconWeather.png) no-repeat;
+  transform: translate(-50%, -50%);
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE01::before {
+  background-position: 0 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE02::before {
+  background-position: -92px 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE03::before {
+  background-position: -184px 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE04::before {
+  background-position: -276px 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE05::before {
+  background-position: -366px 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon.WEATHER_TYPE06::before {
+  background-position: -460px 0;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .wtText {
+  display: block;
+  margin: 9px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .dsText {
+  display: block;
+  color: #282a30;
+  font-size: 15px;
+  line-height: 17px;
+}
+.mainContentGroup .reservationSearchWeather .weather-wrap .dsText em {
+  color: #3b9af2;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap {
+  flex: 0 0 100%;
+  position: relative;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 30px;
+  height: 80px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 20px 30px rgba(154, 170, 207, 0.1);
+}
+.mainContentGroup .reservationSearchWeather .search-wrap .form-wrap {
+  position: relative;
+  padding: 0 80px 0 73px;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap .inner-wrap {
+  height: 80px;
+  padding: 14px 0 0;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap .srcIcon {
+  display: block;
+  position: absolute;
+  top: 31px;
+  left: 34px;
+  width: 25px;
+  height: 23px;
+  color: #45cbb0;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap button[type=submit] {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 70px;
+  height: 70px;
+  background: url(../images/main/srcButton-bg.gif) no-repeat 0 0;
+  border: none;
+  border-radius: 35px 35px 24px 35px;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap button[type=submit] svg {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+.mainContentGroup .reservationSearchWeather .search-wrap input[type=text] {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border: none;
+  color: #717a8b;
+  font-size: 23px;
+  line-height: 25px;
+}
+.mainContentGroup .event {
+  flex: 0 0 49.01960787%;
+  position: relative;
+  width: 49.01960787%;
+  height: 370px;
+}
+.mainContentGroup .event .event-slide {
+  width: 100%;
+}
+.mainContentGroup .event .slide-list {
+  display: flex;
+  width: calc(100% + 30px);
+  height: 340px;
+  margin: 0 0 0 -30px;
+  overflow: hidden;
+}
+.mainContentGroup .event .slide-list .slide-item {
+  margin: 0 0 0 30px;
+}
+.mainContentGroup .event .slide-list a {
+  display: block;
+  height: 340px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+.mainContentGroup .event button {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+}
+.mainContentGroup .event button svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  color: #212121;
+}
+.mainContentGroup .event button.slideControl {
+  width: 30px;
+  height: 30px;
+}
+.mainContentGroup .event button.slideControl svg {
+  width: 16px;
+  height: 16px;
+  color: #231f20;
+}
+.mainContentGroup .event button.slideControl.ctrlStop .play {
+  display: none;
+}
+.mainContentGroup .event button.slideControl.ctrlPlay .stop {
+  display: none;
+}
+.mainContentGroup .event button.prev, .mainContentGroup .event button.next {
+  position: absolute;
+  top: 143px;
+  box-shadow: 0 20px 50px rgba(72, 136, 173, 0.16);
+}
+.mainContentGroup .event button.prev {
+  left: -25px;
+}
+.mainContentGroup .event button.next {
+  right: -25px;
+}
+.mainContentGroup .event button.next svg {
+  transform: rotate(180deg);
+}
+.mainContentGroup .event .controller-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 154px;
+  height: 65px;
+  background: #fff;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -10px 20px rgba(72, 136, 173, 0.016);
+  transform: translateX(-50%);
+}
+.mainContentGroup .event .controller-wrap .count {
+  margin: 3px 0 0;
+  color: #000;
+  font-family: SB;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.reservationFind {
+  position: relative;
+  width: 100%;
+  max-width: 1530px;
+  height: 450px;
+  margin: 0 auto 175px;
+}
+.reservationFind::before {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 88.758169%;
+  height: 450px;
+  background: linear-gradient(290deg, #d9f5b8 0%, #bbe6e7 73%);
+  border-radius: 130px;
+}
+
+.reservationList {
+  position: relative;
+  z-index: 0;
+  margin: 0 0 60px;
+}
+.reservationList::before, .reservationList::after {
+  display: block;
+  position: absolute;
+}
+.reservationList::before {
+  top: 215px;
+  left: 0;
+  width: 469px;
+  height: 461px;
+  background: url(../images/main/reserveBg1.png) no-repeat 0 0;
+}
+.reservationList::after {
+  top: -40px;
+  right: 0;
+  width: 1039px;
+  height: 348px;
+  background: url(../images/main/reserveBg2.png) no-repeat 0 0;
+}
+.reservationList h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 45px;
+}
+.reservationList h3 span {
+  display: block;
+  margin: 0 0 10px;
+  color: #f34d64;
+}
+.reservationList .reservationInnerWrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto;
+  padding: 1px 0 0;
+}
+.reservationList .category {
+  margin: 20px 0 30px 820px;
+  padding: 0 0 1px;
+}
+.reservationList .category .cateDiv {
+  display: flex;
+  margin: 0 0 14px;
+}
+.reservationList .category .cateDiv strong {
+  display: flex;
+  flex: 0 0 140px;
+  width: 140px;
+  margin: 7px 0 0;
+  color: #303056;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 21px;
+}
+.reservationList .category .cateDiv strong svg {
+  flex: 0 0 20px;
+  width: 26px;
+  height: 20px;
+  margin: 1px 10px 0 0;
+  color: #ed778f;
+}
+.reservationList .category .cateDiv button {
+  display: flex;
+  height: auto;
+  padding: 7px 15px 10px;
+  border: 1px solid #ded9de;
+  border-radius: 18px;
+  color: #717a8b;
+  font-size: 17px;
+  line-height: 19px;
+}
+.reservationList .category .cateDiv button svg {
+  display: none;
+  flex: 0 0 13px;
+  width: 13px;
+  height: 11px;
+  margin: 5px 8px 0 0;
+}
+.reservationList .category .cateDiv button span {
+  font-size: 17px;
+  line-height: 19px;
+}
+.reservationList .category .cateDiv button.selected {
+  background: #fdf6f6;
+  border-color: #f07b70;
+  color: #f95c4f;
+}
+.reservationList .category .cateDiv button.selected svg {
+  display: block;
+  color: #fb564c;
+}
+.reservationList .controller {
+  position: absolute;
+  bottom: 260px;
+  left: 0;
+  right: 0;
+  height: 0;
+}
+.reservationList .controller button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 20px 20px rgba(50, 80, 125, 0.06);
+  transform: translateY(-50%);
+}
+.reservationList .controller button svg {
+  width: 23px;
+  height: 23px;
+}
+.reservationList .controller button.next svg {
+  transform: rotate(180deg);
+}
+.reservationList .controller button.prev {
+  left: -90px;
+}
+.reservationList .controller button.next {
+  right: -90px;
+}
+.reservationList .reserve-item-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: calc(100% + 30px + 60px);
+  max-width: 1600px;
+  height: 460px;
+  margin: 0 0 0 -30px;
+  padding: 0 40px 60px 0;
+}
+.reservationList .reserve-item-list .slide-item {
+  flex: 0 0 calc(25% - 30px);
+  position: relative;
+  margin: 0 0 70px 30px;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 20px 30px rgba(50, 80, 125, 0.1);
+}
+.reservationList .reserve-item-list .slide-item a {
+  display: block;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 400px;
+  padding: 40px;
+}
+.reservationList .reserve-item-list .slide-item a::before, .reservationList .reserve-item-list .slide-item a::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #fff;
+}
+.reservationList .reserve-item-list .slide-item a::before {
+  opacity: 0;
+  background: linear-gradient(180deg, #ed709d 0%, #ec8a6c 100%);
+  border-radius: 40px;
+  transition: opacity 0.3s ease;
+}
+.reservationList .reserve-item-list .slide-item a::after {
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 38px;
+}
+.reservationList .reserve-item-list .slide-item .state {
+  position: absolute;
+  top: -3px;
+  right: 27px;
+  width: 94px;
+  height: 45px;
+  padding: 8px 0 0;
+}
+.reservationList .reserve-item-list .slide-item .state svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94px;
+  height: 45px;
+}
+.reservationList .reserve-item-list .slide-item .state span {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+}
+.reservationList .reserve-item-list .slide-item .keyword {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 0 40px;
+}
+.reservationList .reserve-item-list .slide-item .keyword i {
+  margin: 0 0 0 5px;
+  padding: 9px 10px 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 18px;
+}
+.reservationList .reserve-item-list .slide-item .keyword i:first-child {
+  margin: 0;
+}
+.reservationList .reserve-item-list .slide-item .keyword i.price {
+  background: #e3f1fc;
+  color: #008bfd;
+}
+.reservationList .reserve-item-list .slide-item .keyword i.price.free {
+  background: #e5eaf5;
+  color: #627398;
+}
+.reservationList .reserve-item-list .slide-item .keyword i.draw {
+  background: #ffeeed;
+  color: #e85f5f;
+}
+.reservationList .reserve-item-list .slide-item .title {
+  display: block;
+  height: 62px;
+  margin: 0 0 60px;
+  overflow: hidden;
+  color: #303056;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 31px;
+}
+.reservationList .reserve-item-list .slide-item .info {
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 18px;
+}
+.reservationList .reserve-item-list .slide-item .info svg {
+  width: 20px;
+  height: 20px;
+  color: #e53a7a;
+}
+.reservationList .reserve-item-list .slide-item .info em {
+  margin: 0 10px;
+  color: #eb4166;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.reservationList .reserve-item-list .slide-item .filter {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  left: 30px;
+  right: 40px;
+  bottom: 40px;
+  padding: 8px 0 10px;
+  background: #f5f7fb;
+  border-radius: 20px;
+  text-align: center;
+}
+.reservationList .reserve-item-list .slide-item .filter em {
+  position: relative;
+  margin: 0 0 0 13px;
+  padding: 0 0 0 14px;
+  color: #515862;
+  font-size: 18px;
+  line-height: 20px;
+}
+.reservationList .reserve-item-list .slide-item .filter em::before {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 1px;
+  height: 14px;
+  background: #cbcbcb;
+}
+.reservationList .reserve-item-list .slide-item .filter em:first-child {
+  margin: 0;
+  padding: 0;
+}
+.reservationList .reserve-item-list .slide-item .filter em:first-child::before {
+  display: none;
+}
+
+.mainContentGroup .groupInnerWrap {
+  width: 100%;
+  max-width: 1530px;
+  margin: 0 auto;
+}
+.mainContentGroup.group3 {
+  position: relative;
+  padding: 20px 0 120px;
+  overflow: hidden;
+}
+.mainContentGroup.group3::before, .mainContentGroup.group3::after {
+  display: block;
+  position: absolute;
+}
+.mainContentGroup.group3::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 120px;
+  width: 59.114583%;
+  height: 343px;
+  background: url(../images/main/group3Bg.png) no-repeat right bottom;
+}
+.mainContentGroup.group3::after {
+  right: -152px;
+  bottom: 60px;
+  z-index: -1;
+  opacity: 0.5;
+  width: 729px;
+  height: 729px;
+  border-radius: 50%;
+  background: linear-gradient(to top, rgb(217, 242, 201) 0%, rgba(255, 255, 255, 0) 20%);
+}
+.mainContentGroup.group3 .groupInnerWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.boardGroup {
+  flex: 0 0 57.843138%;
+  position: relative;
+  height: 480px;
+  margin: 30px 0 0;
+}
+.boardGroup h3 {
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 200px;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 45px;
+}
+.boardGroup .more {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  color: #515862;
+  transition: all 0.3s;
+}
+.boardGroup .more svg {
+  flex: 0 0 18px;
+  height: 18px;
+}
+.boardGroup .board-tab {
+  display: flex;
+  position: relative;
+}
+.boardGroup .board-tab .tab-element:first-child {
+  margin: 0 0 0 225px;
+}
+.boardGroup .board-tab .tab-element:last-child .tab-button {
+  position: relative;
+  margin: 0 0 0 38px;
+}
+.boardGroup .board-tab .tab-element:last-child .tab-button::before {
+  display: block;
+  position: absolute;
+  top: 26px;
+  left: -24px;
+  width: 8px;
+  height: 8px;
+  background: #cbd0d5;
+  border-radius: 50%;
+}
+.boardGroup .tab-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  height: auto;
+  padding: 0 34px;
+  border: none;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 20px 20px rgba(50, 80, 125, 0.06);
+}
+.boardGroup .tab-button .svgBg {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  width: 52px;
+  height: 22px;
+  margin: 0 auto;
+}
+.boardGroup .tab-button span {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding: 19px 0 16px;
+  color: #828995;
+  font-size: 23px;
+  line-height: 25px;
+}
+.boardGroup .tab-button .icon {
+  display: none;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  margin: 0 15px 0 0;
+}
+.boardGroup .tab-button.current {
+  background: linear-gradient(300deg, #009f99 0%, #42c0a7 78%);
+}
+.boardGroup .tab-button.current .svgBg {
+  display: block;
+}
+.boardGroup .tab-button.current span {
+  color: #fff;
+  font-weight: 700;
+}
+.boardGroup .tab-button.current .icon {
+  display: block;
+}
+.boardGroup .tab-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  padding: 107px 0 0;
+}
+.boardGroup .tab-content li {
+  position: relative;
+  padding: 0 0 0 27px;
+  border-bottom: 1px solid #e2e5e9;
+}
+.boardGroup .tab-content li::before {
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #51c0ad;
+  border-radius: 50%;
+}
+.boardGroup .tab-content li:last-child {
+  border-bottom: none;
+}
+.boardGroup .tab-content li a {
+  display: block;
+  position: relative;
+  padding: 25px 164px 25px 0;
+  color: #515862;
+  font-size: 24px;
+  line-height: 26px;
+}
+.boardGroup .tab-content li a em {
+  display: block;
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  color: #515862;
+  font-size: 18px;
+  line-height: 20px;
+}
+.boardGroup .current + .tab-content {
+  display: block;
+}
+
+.facilitiesGroup {
+  position: relative;
+  flex: 0 0 33.986928%;
+  margin: 0 0 0 8.169934%;
+  padding: 50px 28px 28px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+}
+.facilitiesGroup::before {
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: 35px;
+  width: 105px;
+  height: 103px;
+  background: url(../images/main/iconBg.png) no-repeat;
+}
+.facilitiesGroup h3 {
+  margin: 0 0 50px 32px;
+  color: #2a334e;
+  font-family: SB;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 32px;
+}
+.facilitiesGroup a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 17px 32px 22px;
+  border: 2px solid rgba(131, 224, 180, 0);
+  border-radius: 20px;
+  color: #3b4452;
+  transition: all 0.3s;
+  font-family: EDB;
+  font-size: 22px;
+  line-height: 24px;
+}
+.facilitiesGroup a::before {
+  display: block;
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: -2px;
+  height: 1px;
+  background: #e4e6e7;
+}
+.facilitiesGroup a svg {
+  flex: 0 0 25px;
+  height: 25px;
+  margin: 2px 0 0 9px;
+  color: #babdc4;
+  transition: all 0.3s;
+}
+.facilitiesGroup li:last-child a::before {
+  display: none;
+}
+
+@media all and (min-width: 1000px) {
+  .boardGroup .more:hover {
+    background: #1d2845;
+    color: #fff;
+  }
+  .boardGroup .tab-button:hover span {
+    font-weight: 700;
+  }
+  .boardGroup .tab-content li a:hover {
+    color: #303056;
+  }
+  .boardGroup .tab-content li a:hover em {
+    color: #303056;
+  }
+  .reservationList .controller button:hover {
+    background: #1d2845;
+    color: #fff;
+  }
+  .reservationList .reserve-item-list .slide-item a:hover::before {
+    opacity: 1;
+  }
+  .facilitiesGroup a:hover {
+    background: #f4f8f6;
+    border-color: rgb(131, 224, 180);
+    color: #0da165;
+    font-weight: 600;
+  }
+  .facilitiesGroup a:hover::before {
+    display: none;
+  }
+  .facilitiesGroup a:hover svg {
+    color: #53be8f;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

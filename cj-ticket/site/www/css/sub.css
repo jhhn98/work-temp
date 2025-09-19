@@ -1,0 +1,575 @@
+body {
+  background: #f9fbfc;
+  overflow-x: hidden;
+  transition: background 0.3s;
+}
+
+.bg-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+}
+.bg-circle .circle {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+}
+.bg-circle .circle.colorGreen {
+  top: -526px;
+  left: -208px;
+  width: 728px;
+  height: 728px;
+  background: rgba(151, 224, 96, 0.1);
+  background: linear-gradient(360deg, rgba(151, 224, 96, 0.1) 0%, rgba(151, 224, 96, 0) 30%);
+}
+.bg-circle .circle.colorBlue {
+  top: -511px;
+  right: -422px;
+  width: 800px;
+  height: 800px;
+  background: rgba(75, 84, 255, 0.15);
+  background: linear-gradient(360deg, rgba(75, 84, 255, 0.15) 0%, rgba(75, 84, 255, 0) 30%);
+}
+.bg-circle .circle.colorOrange {
+  top: 161px;
+  right: 98px;
+  width: 778px;
+  height: 778px;
+  background: rgba(240, 172, 151, 0.2);
+  background: linear-gradient(180deg, rgba(240, 172, 151, 0.2) 0%, rgba(240, 172, 151, 0) 30%);
+}
+
+.activeNavigation .bg-circle {
+  display: none;
+}
+
+main {
+  padding: 1px 0 0;
+}
+
+.page-title {
+  width: 100%;
+  max-width: 1530px;
+  margin: 63px auto 0;
+  color: #1d2845;
+  font-family: SB;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+}
+
+.content-option {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1530px;
+  height: 100px;
+  margin: 8px auto 3px;
+}
+.content-option::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 55px;
+  opacity: 0.3;
+  width: 100%;
+  max-width: 1380px;
+  height: 100px;
+  background: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%);
+  border-radius: 0 0 60px 40px;
+  box-shadow: 0 0 20px rgba(31, 51, 139, 0.05);
+}
+.content-option .contentNavigation {
+  display: flex;
+  flex: 0 0 calc(100% - 460px);
+  position: relative;
+  width: calc(100% - 460px);
+}
+.content-option .contentNavigation .navHome {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 11px 0 0;
+  background: #42c0a7;
+  background: linear-gradient(120deg, #42c0a7 0%, #009f99 77%);
+  border-radius: 35px 35px 20px 35px;
+  box-shadow: 5px 5px 20px 5px rgba(50, 80, 125, 0.1);
+}
+.content-option .contentNavigation .navHome::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 19px;
+  height: 19px;
+  margin: auto;
+  background: url(/site/www/images/sub/sprite-subNavigation.png) no-repeat 0 0;
+}
+.content-option .contentNavigation .navHome span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.content-option .contentNavigationList {
+  display: flex;
+  flex: 0 0 calc(100% - 70px);
+  width: calc(100% - 70px);
+  margin: 8px 0 0;
+  padding: 0 50px 0 0;
+}
+.content-option .contentNavigationList > li {
+  flex: 0 0 33.333333%;
+  width: 33.333333%;
+}
+.content-option .contentNavigationList button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 78px;
+  padding: 0 0 0 30px;
+  background: none;
+  border: none;
+  color: #3b4452;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: left;
+}
+.content-option .contentNavigationList button::before, .content-option .contentNavigationList button::after {
+  display: block;
+  position: absolute;
+}
+.content-option .contentNavigationList button::before {
+  top: 36px;
+  right: 30px;
+  width: 12px;
+  height: 8px;
+  background: url(/site/www/images/sub/sprite-subNavigation.png) no-repeat 0 -29px;
+}
+.content-option .contentNavigationList button::after {
+  top: 30px;
+  right: 0;
+  width: 1px;
+  height: 20px;
+  background: #c6cbd5;
+}
+.content-option .contentNavigationList ul {
+  display: none;
+}
+.content-option .contentNavigationList .active button {
+  background: #099991;
+  background: linear-gradient(90deg, #1da88c 0%, #0a9893 78%);
+  border-radius: 25px 25px 0 0;
+  color: #fff;
+  font-weight: 700;
+}
+.content-option .contentNavigationList .active button::before {
+  background-position: -22px -29px;
+}
+.content-option .contentNavigationList .active button::after {
+  display: none;
+}
+.content-option .contentNavigationList .active ul {
+  display: block;
+  position: relative;
+  padding: 19px 0;
+  background: #099991;
+  background: linear-gradient(90deg, #1da88c 0%, #0a9893 78%);
+  box-shadow: 0 0 20px rgba(50, 80, 125, 0.1);
+  border-radius: 0 0 25px 25px;
+}
+.content-option .contentNavigationList .active ul::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.content-option .contentNavigationList .active ul a {
+  display: block;
+  margin: 5px 20px;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.content-option .asideLinks {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  flex: 0 0 460px;
+  width: 460px;
+  padding: 21px 0 0;
+}
+.content-option .asideLinks ul {
+  display: flex;
+}
+.content-option .asideLinks ul > li {
+  position: relative;
+}
+.content-option .asideLinks ul > li:last-child {
+  margin: 0 0 0 10px;
+}
+.content-option .asideLinks button span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.content-option .asideLinks .contentShare, .content-option .asideLinks .contentPrint {
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #3b4452;
+  border: none;
+  border-radius: 25px;
+}
+.content-option .asideLinks .contentShare svg, .content-option .asideLinks .contentPrint svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 24px;
+  margin: auto;
+  color: #fff;
+}
+.content-option .asideLinks .contentShare {
+  z-index: 1;
+  transition: background 0.3s;
+}
+.content-option .asideLinks .contentShare svg {
+  display: none;
+}
+.content-option .asideLinks .contentShare svg.active-icon {
+  display: block;
+}
+.content-option .asideLinks .contentShare.active {
+  background: #1d2845;
+}
+.content-option .asideLinks .contentShare.active svg.active-icon {
+  display: none;
+}
+.content-option .asideLinks .contentShare.active svg.inactive-icon {
+  display: block;
+}
+.content-option .asideLinks .shareList {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  z-index: 0;
+  width: 340px;
+  height: 60px;
+  background: #fff;
+  border-radius: 30px;
+}
+.content-option .asideLinks .shareList ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 20px;
+}
+.content-option .asideLinks .shareList ul li {
+  margin: 0 0 0 8px;
+}
+.content-option .asideLinks .shareList ul li:first-child {
+  margin: 0;
+}
+.content-option .asideLinks .shareList ul button {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+}
+.content-option .asideLinks .shareList ul button::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(/site/www/images/sub/sprite-subNavigation.png) no-repeat;
+}
+.content-option .asideLinks .shareList ul button.facebook {
+  background: #3461bc;
+}
+.content-option .asideLinks .shareList ul button.facebook::before {
+  width: 9px;
+  height: 17px;
+  background-position: -10px -129px;
+}
+.content-option .asideLinks .shareList ul button.instagram {
+  background: #d73083;
+}
+.content-option .asideLinks .shareList ul button.instagram::before {
+  width: 15px;
+  height: 16px;
+  background-position: -10px -155px;
+}
+.content-option .asideLinks .shareList ul button.meta {
+  background: #000;
+}
+.content-option .asideLinks .shareList ul button.meta::before {
+  width: 14px;
+  height: 15px;
+  background-position: -10px -181px;
+}
+.content-option .asideLinks .shareList ul button.naver-blog {
+  background: #2db400;
+}
+.content-option .asideLinks .shareList ul button.naver-blog::before {
+  width: 12px;
+  height: 16px;
+  background-position: -10px -204px;
+}
+.content-option .asideLinks .shareList ul button.link {
+  background: #757b8e;
+}
+.content-option .asideLinks .shareList ul button.link::before {
+  width: 17px;
+  height: 18px;
+  background-position: -10px -230px;
+}
+.content-option .asideLinks .active + .shareList {
+  display: flex;
+}
+
+.content-area {
+  position: relative;
+  z-index: 0;
+  padding: 1px 0 0;
+  background: #fff;
+  border-radius: 218px 218px 0 0;
+  box-shadow: 0 0 30px rgba(55, 104, 171, 0.03);
+}
+.content-area .content {
+  width: 100%;
+  max-width: 1530px;
+  min-height: 900px;
+  margin: 80px auto 0;
+  padding-bottom: 50px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.activeContrast {
+  background: #102d29;
+  transition: background 0.3s;
+}
+.activeContrast .page-title {
+  color: #fff;
+}
+.activeContrast .content-option::before {
+  background: #0a0e11;
+  background: linear-gradient(180deg, rgba(10, 14, 17, 0) 0%, rgb(10, 14, 17) 50%);
+}
+.activeContrast .content-option .contentNavigationList button {
+  color: #bdc5d5;
+}
+.activeContrast .content-option .contentNavigationList button::after {
+  background: #6c7582;
+}
+.activeContrast .content-option .asideLinks .contentShare, .activeContrast .content-option .asideLinks .contentPrint {
+  background: #1a5e53;
+}
+.activeContrast .content-option .asideLinks .shareList {
+  background: rgba(10, 14, 17, 0.5);
+}
+.activeContrast .content-option .asideLinks .shareList > span {
+  color: #717a8b;
+}
+.activeContrast .content-area {
+  background: #0a0e11;
+}
+.activeContrast .content {
+  color: #bdc5d5;
+}
+
+@media all and (min-width: 1001px) {
+  .content-option .contentNavigationList .active ul a:hover {
+    font-weight: 700;
+  }
+}
+@media all and (max-width: 1590px) {
+  h2 {
+    width: calc(100% - 60px);
+  }
+  .content-option {
+    width: calc(100% - 60px);
+  }
+  .content-area .content {
+    width: calc(100% - 60px);
+  }
+}
+@media all and (max-width: 1460px) {
+  .content-option .contentNavigationList button {
+    padding: 0 0 0 15px;
+  }
+  .content-option .contentNavigationList button::before {
+    right: 10px;
+  }
+}
+@media all and (max-width: 1350px) {
+  .content-option .contentNavigation {
+    flex: 0 0 calc(100% - 390px);
+    width: calc(100% - 390px);
+  }
+  .content-option .contentNavigationList > li {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .content-option .contentNavigationList button {
+    padding: 0 45px 0 15px;
+  }
+  .content-option .asideLinks {
+    flex: 0 0 390px;
+    width: 390px;
+  }
+  .content-option .asideLinks .shareList {
+    width: 270px;
+  }
+  .content-option .asideLinks .shareList > span {
+    display: none;
+  }
+  .content-option .asideLinks .shareList ul {
+    margin: 0;
+  }
+}
+@media all and (max-width: 1000px) {
+  .bg-circle .circle.colorGreen {
+    top: -33px;
+    left: -15px;
+    width: 132px;
+    height: 132px;
+  }
+  .bg-circle .circle.colorBlue {
+    top: -30px;
+    right: -79px;
+    width: 145px;
+    height: 145px;
+  }
+  .bg-circle .circle.colorOrange {
+    top: 90px;
+    right: 15px;
+    width: 142px;
+    height: 142px;
+  }
+  .page-title {
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .content-option {
+    justify-content: flex-end;
+    height: 40px;
+    margin: 15px auto 0;
+  }
+  .content-option::before {
+    display: none;
+  }
+  .content-option .contentNavigation {
+    display: none;
+  }
+  .content-option .asideLinks {
+    padding: 0;
+  }
+  .content-option .asideLinks > ul > li:last-child {
+    margin: 0 0 0 6px;
+  }
+  .content-option .asideLinks .contentShare, .content-option .asideLinks .contentPrint {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    box-shadow: 5px 20px 20px rgba(72, 136, 173, 0.09);
+  }
+  .content-option .asideLinks .contentShare svg, .content-option .asideLinks .contentPrint svg {
+    width: 17px;
+    height: 17px;
+    color: #2b2b2b;
+  }
+  .content-option .asideLinks .contentShare svg.inactive-icon {
+    color: #fff;
+  }
+  .content-option .asideLinks .shareList {
+    right: 30px;
+    width: 170px;
+    height: 40px;
+    box-shadow: 5px 20px 20px rgba(72, 136, 173, 0.09);
+  }
+  .content-option .asideLinks .shareList ul li {
+    margin: 0 0 0 4px;
+  }
+  .content-option .asideLinks .shareList ul li:first-child {
+    margin: 0;
+  }
+  .content-option .asideLinks .shareList ul button {
+    width: 24px;
+    height: 24px;
+  }
+  .content-option .asideLinks .shareList ul button::before {
+    background-size: 22px auto;
+  }
+  .content-option .asideLinks .shareList ul button.facebook::before {
+    width: 7px;
+    height: 11px;
+    background-position: -7px -83px;
+  }
+  .content-option .asideLinks .shareList ul button.instagram::before {
+    width: 11px;
+    height: 11px;
+    background-position: -6px -100px;
+  }
+  .content-option .asideLinks .shareList ul button.meta::before {
+    width: 10px;
+    height: 10px;
+    background-position: -6px -117px;
+  }
+  .content-option .asideLinks .shareList ul button.naver-blog::before {
+    width: 8px;
+    height: 11px;
+    background-position: -6px -132px;
+  }
+  .content-option .asideLinks .shareList ul button.link::before {
+    width: 12px;
+    height: 12px;
+    background-position: -6px -149px;
+  }
+  .content-area {
+    margin: -20px 0 0;
+    padding: 38px 0 0;
+    border-radius: 60px 60px 0 0;
+  }
+  .content-area .content {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=sub.css.map */

@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>청주시 통합예약</title>
+    <link rel="preload" href="/common/font/EDB-R.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/common/font/EDB-R.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="/site/www/css/font.css">
+    <link rel="stylesheet" href="/common/css/style-reset.css">
+    <link rel="stylesheet" href="/site/www/css/common.css">
+    <link rel="stylesheet" href="/site/www/css/main.css">
+</head>
+<body>
+<h1>청주시 통합예약 메인</h1>
+<header class="userLogin">
+    <h2>통합예약 메뉴 및 보조기능</h2>
+    <div class="headerWrapper">
+        <div class="headerLogo"><span class="cj-logo"><i>청주시 CHEONGJU CITY</i></span><span class="site-name"><i>통합예약</i></span></div>
+        <button type="button" class="mobile-navigation" aria-controls="global-navigation" aria-expanded="false"><svg class="icon-menuBar"><use href="/site/www/images/common/sprite-common-side.svg#icon-menuBar"></use></svg><svg class="icon-close"><use href="/site/www/images/common/sprite-common-side.svg#icon-close"></use></svg><span>메뉴 열기</span></button>
+        <nav id="global-navigation" class="navigation">
+            <div class="mobile-navigation-head">
+                <div class="mobileHeaderLogo"><span class="cj-logo"><i>청주시 CHEONGJU CITY</i></span><span class="site-name"><i>통합예약</i></span></div>
+                <form method="post" action="">
+                    <fieldset>
+                        <legend>통합예약 검색</legend>
+                        <div class="mobile-search">
+                            <input type="text" title="검색어 입력" placeholder="어떤 예약을 도와드릴까요?">
+                            <button type="submit"><svg><use href="/site/www/images/common/sprite-common-side.svg#icon-view"></use></svg><span>검색</span></button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <ul data-navigation="depth1Wrap" class="navDepth1Wrap">
+                <li class="current">
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        관광&middot;체험
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>관광&middot;체험</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">관광/체험(전체)</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">관람</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">체험/레포츠</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">관광/견학</a></li>
+                                <li class="current">
+                                    <a href="#" data-navigation-depth="2" class="navDepth2">
+                                        캠핑장
+                                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                                    </a>
+                                    <ul data-navigation="depth3Wrap" class="navDepth3Wrap">
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3">문암생태공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3 current">오창미래지농촌테마공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">기타</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        시설예약
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>시설예약</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li>
+                                    <a href="#" data-navigation-depth="2" class="navDepth2">
+                                        시설예약(전체)
+                                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                                    </a>
+                                    <ul data-navigation="depth3Wrap" class="navDepth3Wrap">
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3">문암생태공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3">오창미래지농촌테마공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">체육시설과</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">청주시설관리공단</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">상당구 행정지원과</a></li>
+                                <li>
+                                    <a href="#" data-navigation-depth="2" class="navDepth2">
+                                        환경관리본부
+                                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                                    </a>
+                                    <ul data-navigation="depth3Wrap" class="navDepth3Wrap">
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3">문암생태공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                        <li><a href="#" target="_blank" title="새창" data-navigation-depth="3" class="navDepth3">오창미래지농촌테마공원<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">남일면</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">고인쇄박물관</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        교육/강좌
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>교육/강좌</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">교육/강좌(전체)</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">주민자치센터</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">고인쇄박물관</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">문예운영과</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">농업기술센터</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" data-navigation-depth="1" class="navDepth1">공연/영화</a></li>
+                <li>
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        행정서비스
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>행정서비스</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li><a href="#" target="_blank" title="새창" data-navigation-depth="2" class="navDepth2">대형폐기물 배출신청<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                <li><a href="#" target="_blank" title="새창" data-navigation-depth="2" class="navDepth2">가로등보안등 고장접수<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                <li><a href="#" target="_blank" title="새창" data-navigation-depth="2" class="navDepth2">면접용 정장대여신청<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                <li><a href="#" target="_blank" title="새창" data-navigation-depth="2" class="navDepth2">교통분실물신고센터<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                                <li><a href="#" target="_blank" title="새창" data-navigation-depth="2" class="navDepth2">생활불편신고<svg class="icon-blank"><use href="/site/www/images/common/sprite-common-side.svg#icon-blank"></use></svg></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        이용안내
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>이용안내</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">예약확인</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">공지사항</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">자주찾는 질문</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">이용안내</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li data-visible-on="mobile"><!-- 홈페이지가이드 메뉴도 함께 표출해주세요~ data-visible-on="mobile" 이 속성을 꼭 넣어주셔야 합니다! 부탁드립니다! -->
+                    <a href="#" data-navigation-depth="1" class="navDepth1">
+                        홈페이지가이드
+                        <!-- 하위메뉴가 존재할 때만 넣어주세요 -->
+                        <svg class="mobile-icon"><use href="/site/www/images/common/sprite-common-side.svg#icon-menu-arr"></use></svg>
+                    </a>
+                    <div class="navDepth2Wrapper" data-navigation="depth2Wrap">
+                        <div class="innerWrapper">
+                            <div class="navigationTitle">
+                                <strong>홈페이지가이드</strong>
+                            </div>
+                            <ul class="navDepth2Wrap">
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">개인정보처리방침</a></li>
+                                <li><a href="#" data-navigation-depth="2" class="navDepth2">저작권 정책</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <aside class="aside-links">
+            <ul>
+                <li class="myPage">
+                    <svg><use href="/site/www/images/common/sprite-common-side.svg#icon-user"></use></svg>
+                    <div class="linkLayer">
+                        <svg><use href="/site/www/images/common/sprite-common-side.svg#icon-arrTop"></use></svg>
+                        <a href="./"><span>마이페이지</span></a>
+                    </div>
+                </li>
+                <!--<li><a href="./login.do" class="account"><svg><use href="/site/www/images/common/sprite-common-side.svg#icon-account-off"></use></svg><span>로그인</span></a></li>-->
+                <li><a href="./logout.do" class="account"><svg><use href="/site/www/images/common/sprite-common-side.svg#icon-account-on"></use></svg><span>로그아웃</span></a></li>
+                <li class="feature">
+                    <span>화면조정</span>
+                    <button type="button" class="viewZoom in"><span>확대</span></button>
+                    <button type="button" class="viewZoom out"><span>축소</span></button>
+                    <button type="button" class="contrast">
+                        <svg class="off"><use href="/site/www/images/common/sprite-common-side.svg#icon-contrast-off"></use></svg>
+                        <svg class="on"><use href="/site/www/images/common/sprite-common-side.svg#icon-contrast-on"></use></svg>
+                        <span>고대비 모드 켜기</span>
+                    </button>
+                </li>
+            </ul>
+        </aside>
+    </div>
+</header>
+<!--<svg><use href="/site/www/images/main/sprite-main.svg#icon-searchImg"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-fill"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-simple"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-comment"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-comment-arr"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-people"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-folder"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-grid"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-notePin"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-pause"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-search-normal"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-search-visual"></use></svg>
+<svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg>
+<svg viewBox="0 0 129.16 72.57" width="360" aria-labelledby="mapTitle" overflow="visible">
+    <title id="mapTitle">인터랙티브 영역</title>
+    <defs>
+        &lt;!&ndash; SVG 필터: 그림자 &ndash;&gt;
+        <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.6)"/>
+        </filter>
+
+        &lt;!&ndash; CSS 스타일 &ndash;&gt;
+        <style>
+            /* 기본 모양 */
+            .hot-area {
+                fill: #fff;
+                stroke: #07a59f;
+                stroke-width: 1.5;
+                stroke-miterlimit: 10;
+                transition: filter .2s ease, fill .2s ease, stroke .2s ease;
+                cursor: pointer;
+            }
+
+            /* hover 시: 색상 + 그림자 */
+            a:hover .hot-area,
+            .hot-area:hover {
+                fill: #07a59f;         /* 내부 채움색 바꾸기 */
+                stroke: #02514e;       /* 테두리색도 살짝 어둡게 */
+                filter: url(#sh);      /* 드롭 섀도우 적용 */
+            }
+
+            /* 접근성/포커스 스타일(키보드 탭) */
+            a:focus .hot-area {
+                outline: none;
+                filter: url(#sh);
+            }
+        </style>
+    </defs>
+
+    &lt;!&ndash; 링크로 감싸면 네모가 아니라 'path 모양'만 클릭영역이 됨 &ndash;&gt;
+    <a href="https://example.com/target" target="_blank" rel="noopener" aria-label="해당 영역으로 이동">
+        <path class="hot-area" d="M128.66,35.99v-1.93l-1.31-.83s-.21-1.17-.28-2.9c-.07-1.73-1.45-1.86-1.45-1.86v-.55l-.53-.69-.3-.62c.97-1.79-.69-3.38-1.38-5.66s-1.38-2.35-2.42-1.59c-1.04.76-2.07,0-2.07,0l-.83-.35-1.31-1.38c0-2.07-.35-2.9-.35-2.9-1.31-.69-.62-2.14-.62-2.14v-1.59l-2-.83c-.97-2.62-3.73-2.59-3.73-2.59l-1.35-2.17-.93.1-.52-.72-.72-1.14v-1.55l-.83-1.35-1.04.83-2.49.52-3.11,1.35-2.69.52-2.38.72-2.28,1.14-2.17.52h-2.8l-3.11,1.24h-2.17c2.74-3.05-.83-6.47-.83-6.47l-3.62.1-2.23,1.76s.47,1.97-1.66.57c-2.12-1.4-2.85.26-2.85.26l-1.04.67s-1.81,1.04-2.85,1.86-1.55-.05-1.55-.05h-2.23s-1.09-.83-1.29.31c-.21,1.14-2.85,3.42-2.85,3.42l-1.45,1.66s.16,1.45.1,1.61-.52,1.35-.52,1.35c1.35,2.33.47,2.54.47,2.54-4.61.36-2.38-.67-3.57-1.71-1.19-1.04-2.28.16-2.28.16,0,0-.57.31-2.43.52s-2.95-2.07-2.12-2.49c.83-.41.78-.57.1-1.19-.67-.62-1.76.05-1.76.05l-1.14.16s-.41,1.5-1.5.41-1.86.52-1.86.52l-.05,1.66c-3.78,2.02-1.45,2.38-2.59,3.37-1.14.98-1.55.16-1.55.16l-1.4-.62-.83-.78c-1.09-2.64-.98-1.81-2.43-2.07-1.45-.26-.52-2.38-1.35-3.37-.83-.98-1.66-.05-1.66-.05,0,0-.78.83-1.35.1-.57-.72-1.45-.05-1.45-.05-2.02,1.14-2.59-1.24-2.59-1.24,0,0-2.12-.26-2.95.26-.83.52-1.61.67-1.66.36s-.67-1.04-1.04.57c-.36,1.61-2.38,2.64-2.38,2.64,0,0-1.61,1.04-2.33.52-.72-.52-2.43,0-2.43,0l-1.55.1-.67.72c-.93,3.47,1.24,3.68,1.24,3.68l.36,2.38c2.8,1.4,2.12,2.28.78,4.45-1.35,2.17-4.04-.1-4.04-.1l.05-1.14c-.47-.72-2.49.05-2.49.05v1.09l-.83.31-1.76,3.31-.41.05.88.72h2.38l2.59,1.14,1.97.83h.52l5.49.31s2.28,1.1,3.73.83c1.45-.28,2.42.55,2.42.55,0,0,2.28,3.38,6.83.9s5.18-2.62,8.15,1.38l2.35,1.31s4.14-1.52,1.1,2.14c0,0,6.9,6.07,7.39,8.08v.41h2.49v2.76s1.93,1.1,3.73,0c.87-.54,1.85-.58,2.52-.38.72.21,1.08.71.58,1.21l-.21,3.66.44.62h2.81l3.17,2.4.21.16.9,1.79,1.31,1.93,1.59.97.27.48,1.52,2.76,2.67,4.83c1.48.7,1.89.13,2.51-.14l1.66-.34s.28-.62,2.21-.48,1.79-.55,1.79-.55l1.79-.76,1.59-1.86h1.86l.76-.76h.97l1.16-1.04,1.05-.35.76-1.38s1.17-1.59,2.55-1.66c1.38-.07.76-1.38.76-1.38,0,0,.9-2.83,3.87-1.52l.97-.35,1.73-1.86h2.42l.48-.62h1.45s.76-1.04,1.38,0l2.35-.46,1.38-1.47,1.04-.28.35-.83,2-2.07s1.31-.9,2.14,0c.83.9,1.24-.83,1.24-.83l1.45-.9s1.45-.35,0-2l.97-.97h.83l2-2.83h2.21l.48-.48h1.93s1.52-.69,1.93-2.83l1.44-1.58s-.06-.08-.06-.08v-2.49l.28-.62Z"/>
+        <text class="hot-label" x="65" y="36">인터랙티브 영역</text>
+    </a>
+</svg>-->
+<div class="mainBg"></div>
+<main>
+    <h2>main content</h2>
+    <div class="mainContentGroup group1">
+        <!--<svg>
+            <defs>
+                <linearGradient id="grad-shared1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#00dbde"/>
+                    <stop offset="100%" stop-color="#fc00ff"/>
+                </linearGradient>
+            </defs>
+            <use href="/site/www/images/main/sprite-main.svg#icon-comment-arr" fill="url(#grad-shared1)"></use>
+        </svg><br><br>
+        <svg>
+            <defs>
+                <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffd600"/>
+                    <stop offset="100%" stop-color="#1f7523"/>
+                </linearGradient>
+            </defs>
+            <use href="/site/www/images/main/sprite-main.svg#icon-comment-arr" fill="url(#grad-shared2)"></use>
+        </svg>-->
+        <div class="colgroup1">
+            <section class="reservationSearchWeather">
+                <h3>예약 검색 및 날씨</h3>
+                <strong><span>모든 예약,</span> 쉽고 빠르게!</strong>
+                <div class="weather-wrap">
+                    <span class="wtIcon WEATHER_TYPE01"><i>맑음</i></span>
+                    <p>
+                        <span class="wtText">28.5°<em>맑음</em></span>
+                        <span class="dsText">😉 미세 <em>좋음</em></span>
+                    </p>
+                </div>
+                <div class="search-wrap">
+                    <form name="" method="post" action="">
+                        <fieldset>
+                            <legend>예약 검색</legend>
+                            <div class="form-wrap">
+                                <div class="inner-wrap">
+                                    <svg class="srcIcon"><use href="/site/www/images/main/sprite-main.svg#icon-searchImg"></use></svg>
+                                    <input type="text" title="검색어 입력" placeholder="어떤 예약을 도와드릴까요?"/>
+                                    <button type="submit"><svg><use href="/site/www/images/main/sprite-main.svg#icon-search-visual"></use></svg><span>검색버튼</span></button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+            <section class="event">
+                <h3>이벤트 팝업</h3>
+                <div class="event-slide">
+                    <div class="slide-list">
+                        <div class="slide-item">
+                            <a href=""><img src="/site/www/images/main/event1.jpg" alt=""></a>
+                        </div>
+                        <div class="slide-item">
+                            <a href=""><img src="/site/www/images/main/event2.jpg" alt=""></a>
+                        </div>
+                        <div class="slide-item">
+                            <a href=""><img src="/site/www/images/main/event1.jpg" alt=""></a>
+                        </div>
+                        <div class="slide-item">
+                            <a href=""><img src="/site/www/images/main/event2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="controller">
+                        <button type="button" class="prev"><svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-simple"></use></svg><em>이전 슬라이드</em></button>
+                        <button type="button" class="next"><svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-simple"></use></svg><em>다음 슬라이드</em></button>
+                        <div class="controller-wrap">
+                            <div class="count">
+                                <span class="current">00</span>
+                                <i>-</i>
+                                <span class="total">00</span>
+                            </div>
+                            <button type="button" class="slideControl ctrlStop">
+                                <span class="stop">
+                                    <svg><use href="/site/www/images/main/sprite-main.svg#icon-pause"></use></svg>
+                                    <em>슬라이드 정지</em>
+                                </span>
+                                <span class="play">
+                                    <svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-fill"></use></svg>
+                                    <em>슬라이드 재생</em>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="reservationFind">
+        <h3>예약 조회</h3>
+        <form name="" method="post" action="">
+            <fieldset>
+                <legend>예약조회</legend>
+                <ol class="reserveStep">
+                    <li class="map">
+                        <div class="mapInnerWrap">
+                            <strong>지역선택<span>Step1</span></strong>
+                            <div class="mapSelect">
+                                <select name="" title="구 선택">
+                                    <option>구 선택</option>
+                                    <option value="1">청원구</option>
+                                    <option value="2">흥덕구</option>
+                                    <option value="3">상당구</option>
+                                    <option value="4">서원구</option>
+                                </select>
+                            </div>
+                            <div class="mapArea">
+                                <button type="button"><span><i>청원구</i></span></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="category">
+                        <strong>분류 선택<span>Step2</span></strong>
+                    </li>
+                    <li class="state">
+                        <strong>예약상태 선택<span>Step3</span></strong>
+                    </li>
+                </ol>
+            </fieldset>
+        </form>
+    </section>
+    <section class="reservationList">
+        <div class="reservationInnerWrap">
+            <h3><span>청주시의 다양한</span>프로그램을 만나보세요.</h3>
+            <div class="category">
+                <div class="cateDiv">
+                    <strong>
+                        <svg><use href="/site/www/images/main/sprite-main.svg#icon-people"></use></svg>
+                        생애주기별
+                    </strong>
+                    <button type="button" class="selected"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>영유아</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>아동</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>청소년</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>성인</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>어르신</span></button>
+                </div>
+                <div class="cateDiv">
+                    <strong>
+                        <svg><use href="/site/www/images/main/sprite-main.svg#icon-folder"></use></svg>
+                        분류별
+                    </strong>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>체험견학</span></button>
+                    <button type="button" class="selected"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>시설예약</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>교육강좌</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>시티투어</span></button>
+                    <button type="button"><svg><use href="/site/www/images/main/sprite-main.svg#icon-check"></use></svg><span>공연문화</span></button>
+                </div>
+            </div>
+            <div class="reserve-item-list">
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType1">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e33d83"/>
+                                        <stop offset="100%" stop-color="#ff7f73"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared1)"></use>
+                            </svg>
+                            <span>접수중</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price free">₩ 무료</i>
+                            <i class="draw">추첨제</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType1">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e33d83"/>
+                                        <stop offset="100%" stop-color="#ff7f73"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared1)"></use>
+                            </svg>
+                            <span>접수중</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType1">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e33d83"/>
+                                        <stop offset="100%" stop-color="#ff7f73"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared1)"></use>
+                            </svg>
+                            <span>접수중</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType3">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e1e1e1"/>
+                                        <stop offset="100%" stop-color="#868686"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared3)"></use>
+                            </svg>
+                            <span>접수마감</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+                <div class="slide-item">
+                    <a href="">
+                        <i class="state apcType2">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="grad-shared2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#bac8e0"/>
+                                        <stop offset="100%" stop-color="#93a5cf"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-chip" fill="url(#grad-shared2)"></use>
+                            </svg>
+                            <span>접수대기</span>
+                        </i>
+                        <span class="keyword">
+                            <i class="price">₩ 유료</i>
+                            <i class="draw">선착순</i>
+                        </span>
+                        <strong class="title">여름방학체험 &lt;아빠와 만드는 우리가족 타임캡슐</strong>
+                        <span class="info location">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-location"></use></svg>
+                            <em>기관</em>
+                            고인쇄박물관
+                        </span>
+                        <span class="info calendar">
+                            <svg><use href="/site/www/images/main/sprite-main.svg#icon-calendar"></use></svg>
+                            <em>접수</em>
+                            2025.07.08~2025.07.18
+                        </span>
+                        <span class="filter">
+                            <em>체험견학</em>
+                            <em>영유아</em>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="controller">
+                <button type="button" class="prev">
+                    <svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-simple"></use></svg>
+                    <span>이전 슬라이드</span>
+                </button>
+                <button type="button" class="next">
+                    <svg><use href="/site/www/images/main/sprite-main.svg#icon-arr-simple"></use></svg>
+                    <span>다음 슬라이드</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <div class="mainContentGroup group3">
+        <div class="groupInnerWrap">
+            <section class="boardGroup">
+                <h3>알립니다.</h3>
+                <div class="board-tab">
+                    <div class="tab-element">
+                        <button type="button" class="tab-button current">
+                            <svg class="svgBg">
+                                <defs>
+                                    <linearGradient id="comment-bg" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(30)">
+                                        <stop offset="0%" stop-color="#38b7a4"/>
+                                        <stop offset="78%" stop-color="#34ac9f"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-comment2" fill="url(#comment-bg)"></use>
+                            </svg>
+                            <span>
+                            <svg class="icon"><use href="/site/www/images/main/sprite-main.svg#icon-notePin"></use></svg>
+                            공지사항
+                        </span>
+                        </button>
+                        <div class="tab-content">
+                            <a href="./sub.do?key=" class="more"><svg><use href="/site/www/images/main/sprite-main.svg#icon-grid"></use></svg><span>공지사항 더보기</span></a>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <span>공지사항 여름방학 맞이 다채로운 체험프로그램이 접수중입니다</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>옥화자연휴양림 행복숲 체험 모집합니다</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>고인쇄박물관과 ICDH가 함께하는 기록유산 접수 시작합니다.</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>청주시 무료법률 상담실 많이 이용하세요.</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-element">
+                        <button type="button" class="tab-button">
+                            <svg class="svgBg">
+                                <defs>
+                                    <linearGradient id="comment-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#42c0a7"/>
+                                        <stop offset="78%" stop-color="#009f99"/>
+                                    </linearGradient>
+                                </defs>
+                                <use href="/site/www/images/main/sprite-main.svg#icon-comment2" fill="url(#comment-bg)"></use>
+                            </svg>
+                            <span>
+                            <svg class="icon"><use href="/site/www/images/main/sprite-main.svg#icon-notePin"></use></svg>
+                            자주하는 질문
+                        </span>
+                        </button>
+                        <div class="tab-content">
+                            <a href="./sub.do?key=" class="more"><svg><use href="/site/www/images/main/sprite-main.svg#icon-grid"></use></svg><span>자주하는 질문 더보기</span></a>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <span>자주하는 질문 청주시 무료법률 상담실 많이 이용하세요.</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>여름방학 맞이 다채로운 체험프로그램이 접수중입니다</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>옥화자연휴양림 행복숲 체험 모집합니다</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>고인쇄박물관과 ICDH가 함께하는 기록유산 접수 시작합니다.</span>
+                                        <em>2025.07.05</em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="facilitiesGroup">
+                <h3>관련시설 바로가기</h3>
+                <ul>
+                    <li><a href="./sub.do?key=">청주시 시설관리공단 통합예약<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg></a></li>
+                    <li><a href="./sub.do?key=">청주시 평생학습관<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg></a></li>
+                    <li><a href="./sub.do?key=">정보화교육<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg></a></li>
+                    <li><a href="./sub.do?key=">청주 시립도서관<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg></a></li>
+                    <li><a href="./sub.do?key=">청주 예술의 전당<svg><use href="/site/www/images/main/sprite-main.svg#icon-blank"></use></svg></a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-wrapper">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="./sub.do?key=" class="privacyPolicy">개인정보처리방침</a></li>
+                <li><a href="./sub.do?key=">저작권보호정책</a></li>
+                <li><a href="./sub.do?key=">홈페이지가이드</a></li>
+            </ul>
+        </nav>
+        <address>[28527] 충청북도 청주시 상당구 상당로69번길 38 (청주시청 임시청사)</address>
+        <ul class="site-info">
+            <li>대표전화 : <em>043－201－0001</em></li>
+            <li>상호명 : <em>청주시 통합예약</em></li>
+            <li>대표자명 : <em>이범석</em></li>
+            <li>사업자등록번호 : <em>301－83－00793</em></li>
+        </ul>
+        <p class="copyright">COPYRIGHT CHEONGJU CITY. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
+<script src="/site/www/js/commonFunction.js"></script>
+</body>
+</html>
