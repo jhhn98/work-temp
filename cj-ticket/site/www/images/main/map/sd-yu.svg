@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.92 11.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #07a59f;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Layer_5" data-name="Layer 5">
+    <path class="cls-1" d="M15.82,1.62h0c-6.22,2.9-8.23.44-8.23.44,0,0-3.61-3.22-7.09-.39v7.77l2.06.97c1.42.35,3.86.59,5.67-1.14,2.71-2.58.9.52,6.57-4.25,0,0,2.81-1.13,1.02-3.4Z"/>
+  </g>
+</svg>

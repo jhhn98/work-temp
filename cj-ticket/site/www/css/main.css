@@ -1,4 +1,4 @@
-.boardGroup .more span, .reservationList .controller button span, .reservationFind h3, .mainContentGroup .event button em, .mainContentGroup .event h3, .mainContentGroup .reservationSearchWeather .search-wrap button[type=submit] span, .mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon i, .mainContentGroup .reservationSearchWeather h3, main > h2 {
+.boardGroup .more span, .reservationList .controller button span, .reserveStep .map .mapSelect .initialSelect span, .reservationFind h3, .mainContentGroup .event button em, .mainContentGroup .event h3, .mainContentGroup .reservationSearchWeather .search-wrap button[type=submit] span, .mainContentGroup .reservationSearchWeather .weather-wrap .wtIcon i, .mainContentGroup .reservationSearchWeather h3, main > h2 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -328,12 +328,473 @@ main::before {
 .reservationFind::before {
   display: block;
   position: absolute;
-  right: 0;
+  right: -60px;
   bottom: 0;
   width: 88.758169%;
   height: 450px;
   background: linear-gradient(290deg, #d9f5b8 0%, #bbe6e7 73%);
   border-radius: 130px;
+}
+
+.reserveStep {
+  display: flex;
+  position: relative;
+}
+.reserveStep > li {
+  position: relative;
+  box-sizing: border-box;
+}
+.reserveStep .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #053536;
+  font-family: SB;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.reserveStep .title span {
+  display: block;
+  margin: 0 0 0 15px;
+  color: rgba(13, 161, 101, 0.6);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.reserveStep .map {
+  flex: 0 0 44.379086%;
+  width: 44.379086%;
+}
+.reserveStep .map .mapInnerWrap {
+  position: absolute;
+  top: -110px;
+  left: -40px;
+  width: calc(100% + 40px);
+  height: 520px;
+  padding: 38px 45px 0 70px;
+  background: linear-gradient(290deg, #0fa7a3 0%, #26d0a6 73%);
+  border-radius: 120px;
+  box-shadow: 0 20px 50px rgba(72, 136, 173, 0.15);
+}
+.reserveStep .map .title-area {
+  display: flex;
+  width: 100%;
+}
+.reserveStep .map .title {
+  flex: 0 0 170px;
+  width: 170px;
+  color: #fff;
+}
+.reserveStep .map .title span {
+  color: rgba(255, 255, 255, 0.6);
+}
+.reserveStep .map .mapSelect {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 0 calc(100% - 170px);
+  width: calc(100% - 170px);
+}
+.reserveStep .map .mapSelect .initialSelect {
+  display: flex;
+  flex: 0 0 50px;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 25px;
+}
+.reserveStep .map .mapSelect .initialSelect svg {
+  width: 15px;
+  height: 14px;
+  color: #fff;
+}
+.reserveStep .map .mapSelect .main-customSelect {
+  position: relative;
+  height: 50px;
+  margin: 0 0 0 5px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+}
+.reserveStep .map .mapSelect .main-customSelect select {
+  height: 50px;
+  padding: 0 54px 0 19px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+}
+.reserveStep .map .mapSelect .main-customSelect i {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #288b80;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.reserveStep .map .mapSelect .main-customSelect i svg {
+  width: 18px;
+  height: 18px;
+  transform: rotate(270deg);
+  color: #fff;
+}
+.reserveStep .map .mapArea {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: auto;
+  height: 409px;
+  background: url(../images/main/map/mapBg.gif) no-repeat 50%;
+  border-radius: 20px 20px 118px 118px;
+}
+.reserveStep .map .mapArea svg {
+  position: absolute;
+  overflow: visible;
+}
+.reserveStep .map .mapArea svg:hover {
+  z-index: 1;
+}
+.reserveStep .map .cwg {
+  top: 19px;
+  left: 198px;
+  width: 252px;
+  height: 141px;
+}
+.reserveStep .map .hdg {
+  top: 76px;
+  left: 165px;
+  width: 174px;
+  height: 168px;
+}
+.reserveStep .map .swg {
+  top: 156px;
+  left: 244px;
+  width: 107px;
+  height: 202px;
+}
+.reserveStep .map .sdg {
+  top: 71px;
+  left: 303px;
+  width: 271px;
+  height: 329px;
+}
+.reserveStep .map .area {
+  fill: #fff;
+  stroke: #07a59f;
+  stroke-width: 1;
+  stroke-miterlimit: 10;
+  transition: filter 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+  cursor: pointer;
+}
+.reserveStep .map a:hover .area, .reserveStep .map .area:hover {
+  z-index: 1;
+  fill: #f6fafd;
+  stroke: #07a59f;
+  stroke-width: 1.5;
+  filter: url(#map-shadow);
+}
+.reserveStep .map .area.select {
+  fill: #cbede7;
+}
+.reserveStep .map a:focus .area {
+  outline: none;
+  filter: url(#map-shadow);
+}
+.reserveStep .map .area-label {
+  fill: #609093;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+}
+.reserveStep .map a:hover .area-label {
+  fill: #009991;
+}
+.reserveStep .category {
+  flex: 0 0 30.915032%;
+  width: 30.915032%;
+  padding: 55px 12px 0 58px;
+}
+.reserveStep .category::before, .reserveStep .category::after {
+  display: block;
+  position: absolute;
+  top: -5px;
+  width: 66px;
+  height: 70px;
+  background: url(../images/main/map/mapBgPtrnRound.png) no-repeat;
+}
+.reserveStep .category::before {
+  left: 0;
+  transform: scaleX(-1);
+}
+.reserveStep .category::after {
+  right: 0;
+}
+.reserveStep .category .title {
+  margin: 0 0 0 20px;
+}
+.reserveStep .category .categoryWrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 25px 0 0;
+}
+.reserveStep .category label {
+  display: block;
+  position: relative;
+  flex: 0 0 calc(33.333333% - 6px);
+  width: calc(33.333333% - 6px);
+  height: 129px;
+  padding: 85px 0 0;
+  background: #fff;
+  border-radius: 25px;
+}
+.reserveStep .category label.category4, .reserveStep .category label.category5 {
+  flex: 0 0 calc(50% - 6px);
+  width: calc(50% - 6px);
+}
+.reserveStep .category label.category1, .reserveStep .category label.category4 {
+  margin: 10px 6px 0 0;
+}
+.reserveStep .category label.category2 {
+  margin: 10px 3px 0;
+}
+.reserveStep .category label.category3, .reserveStep .category label.category5 {
+  margin: 10px 0 0 6px;
+}
+.reserveStep .category label::before {
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  width: 43px;
+  height: 43px;
+  margin: 0 auto;
+  background: url(../images/main/map/sprite-category.png) no-repeat;
+}
+.reserveStep .category label.category1::before {
+  background-position: 0 0;
+}
+.reserveStep .category label.category2::before {
+  background-position: -53px 0;
+}
+.reserveStep .category label.category3::before {
+  background-position: -106px 0;
+}
+.reserveStep .category label.category4::before {
+  background-position: -153px 0;
+}
+.reserveStep .category label.category5::before {
+  background-position: -203px 0;
+}
+.reserveStep .category label input[type=radio] {
+  display: none;
+}
+.reserveStep .category label span {
+  display: block;
+  color: #3b4452;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: center;
+  transition: color 0.3s;
+}
+.reserveStep .category label span::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border: 3px solid rgb(34, 181, 106);
+  border-radius: 25px;
+  transition: opacity 0.3s;
+}
+.reserveStep .category label span .count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -12px;
+  right: 0;
+  z-index: 1;
+  width: 52px;
+  height: 30px;
+  background: #f3f3f3;
+  border-radius: 15px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.reserveStep .category label span .count i {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #717a8b;
+  font-family: SB;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  transition: color 0.3s;
+}
+.reserveStep .category label span .count svg {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  bottom: -7px;
+  width: 30px;
+  height: 18px;
+  margin: 0 auto;
+  color: #f3f3f3;
+  transition: color 0.3s;
+}
+.reserveStep .category label input[type=radio]:checked + span {
+  color: #068f47;
+}
+.reserveStep .category label input[type=radio]:checked + span::after {
+  opacity: 1;
+}
+.reserveStep .category label input[type=radio]:checked + span .count {
+  background: #0ba956;
+}
+.reserveStep .category label input[type=radio]:checked + span .count i {
+  color: #fff;
+}
+.reserveStep .category label input[type=radio]:checked + span .count svg {
+  color: #0ba956;
+}
+.reserveStep .state {
+  flex: 0 0 24.705882%;
+  width: 24.705882%;
+  padding: 55px 0 0 30px;
+}
+.reserveStep .state::before {
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 66px;
+  height: 70px;
+  background: url(../images/main/map/mapBgPtrnRound.png) no-repeat;
+  transform: scaleX(-1);
+}
+.reserveStep .state .title {
+  margin: 0 0 0 20px;
+}
+.reserveStep .state .stateWrap {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 268px;
+  margin: 35px 0 0;
+  background: #fff;
+  border-radius: 25px;
+}
+.reserveStep .state .stateWrap .radioWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  padding: 40px 0 30px;
+  border-bottom: 1px solid #eeeff1;
+}
+.reserveStep .state .stateWrap .radioWrap input[type=radio] {
+  display: none;
+}
+.reserveStep .state .stateWrap .radioWrap span {
+  display: block;
+  position: relative;
+  margin: 0 10px;
+  padding: 0 0 0 25px;
+  color: #3b4452;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.reserveStep .state .stateWrap .radioWrap span::before, .reserveStep .state .stateWrap .radioWrap span::after {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 47%;
+  transition: border-color 0.3s, background 0.3s;
+}
+.reserveStep .state .stateWrap .radioWrap span::before {
+  top: 1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c1c4ca;
+  border-radius: 45%;
+}
+.reserveStep .state .stateWrap .radioWrap span::after {
+  top: 5px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+}
+.reserveStep .state .stateWrap .radioWrap input[type=radio]:checked + span {
+  color: #008c42;
+}
+.reserveStep .state .stateWrap .radioWrap input[type=radio]:checked + span::after {
+  background: #0ba956;
+}
+.reserveStep .state .stateWrap .radioWrap input[type=radio]:checked + span::before {
+  border-color: #0ba956;
+}
+.reserveStep .state .stateWrap p {
+  position: relative;
+  margin: 30px 30px 0;
+  padding: 0 20px 0 33px;
+  color: #717a8b;
+  font-size: 17px;
+  letter-spacing: -0.0625em;
+  line-height: 21px;
+}
+.reserveStep .state .stateWrap p svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  color: #f06580;
+}
+.reserveStep .state .stateWrap button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background: #0da165;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.reserveStep .state .stateWrap button svg {
+  width: 24px;
+  height: 24px;
+  margin: 1px 15px 0 0;
 }
 
 .reservationList {
