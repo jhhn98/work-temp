@@ -598,7 +598,7 @@ footer .copyright {
     width: calc(100% - 310px);
   }
   footer .footer-wrapper {
-    width: calc(100% - 60px);
+    width: calc(100% - 30px);
   }
 }
 @media all and (max-width: 1490px) {
@@ -625,8 +625,8 @@ footer .copyright {
   }
   header .headerLogo {
     position: absolute;
-    top: 28px;
-    left: 30px;
+    top: 15px;
+    left: 15px;
   }
   .navigation {
     flex: 100%;
@@ -637,8 +637,8 @@ footer .copyright {
   }
   .aside-links {
     position: absolute;
-    top: 28px;
-    right: 30px;
+    top: 10px;
+    right: 15px;
   }
 }
 @media all and (max-width: 1000px) {

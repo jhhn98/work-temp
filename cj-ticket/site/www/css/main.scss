@@ -58,8 +58,12 @@ main{position:relative;z-index:1;padding:30px 0 0;
         button{position:relative;width:50px;height:50px;background:#fff;border:none;border-radius:50%;
             em{@extend %visually-hidden;}
             svg{display:block;position:absolute;top:0;left:0;right:0;bottom:0;width:24px;height:24px;margin:auto;color:#212121;}
-            &.slideControl{width:30px;height:30px;
-                svg{width:16px;height:16px;color:#231f20;}
+            &.slideControl{position:relative;width:30px;height:30px;
+                span{display:block;position:absolute;top:0;left:0;width:100%;height:100%;}
+                svg{display:block;position:absolute;top:50%;left:50%;width:16px;height:16px;color:#231f20;transform:translate(-50%,-50%);}
+                .play{
+                    svg{width:22px;height:22px;}
+                }
                 &.ctrlStop{
                     .play{display:none;}
                 }
@@ -99,28 +103,113 @@ main{position:relative;z-index:1;padding:30px 0 0;
                 svg{width:15px;height:14px;color:#fff;}
             }
             .main-customSelect{position:relative;height:50px;margin:0 0 0 5px;background:rgba(0,0,0,.3);border-radius:25px;
-                select{height:50px;padding:0 54px 0 19px;background:none;border:none;color:#fff;font-size:16px;line-height:18px;}
+                select{position:relative;z-index:1;height:50px;padding:0 54px 0 19px;background:none;border:none;color:#fff;font-size:16px;line-height:18px;}
                 i{display:flex;position:absolute;top:50%;right:8px;justify-content:center;align-items:center;width:35px;height:35px;background:#288b80;border-radius:50%;transform:translateY(-50%);
                     svg{width:18px;height:18px;transform:rotate(270deg);color:#fff;}
                 }
             }
         }
-        .mapArea{position:absolute;left:2px;right:2px;bottom:2px;width:auto;height:409px;background:url(../images/main/map/mapBg.gif) no-repeat 50%;border-radius:20px 20px 118px 118px;
-            svg{position:absolute;overflow:visible;
-                &:hover{z-index:1;}
+        .mapArea{position:absolute;left:2px;right:2px;bottom:2px;overflow:hidden;width:auto;height:409px;background:url(../images/main/map/mapBg.gif) #f6fafd no-repeat 50%;border-radius:20px 20px 118px 118px;
+            svg{position:absolute;z-index:0;overflow:visible;
+                &:hover,&.is-selected{z-index:1;}
             }
         }
-        .cwg{top:19px;left:198px;width:252px;height:141px;}
-        .hdg{top:76px;left:165px;width:174px;height:168px;}
-        .swg{top:156px;left:244px;width:107px;height:202px;}
-        .sdg{top:71px;left:303px;width:271px;height:329px;}
+        .areaInnerWrap{position:absolute;top:18px;left:50%;width:408px;height:382px;transform:translateX(-50%);}
+        .cwg{top:0;left:44px;width:252px;height:141px;}/* left:198px */
+        .hdg{top:57px;left:11px;width:174px;height:168px;}/* left:174px */
+        .swg{top:138px;left:90px;width:107px;height:202px;}/* left:107px */
+        .sdg{top:53px;left:149px;width:271px;height:329px;}/* left:303px */
         .area{fill:#fff;stroke:#07a59f;stroke-width:1;stroke-miterlimit:10;transition:filter .2s ease, fill .2s ease, stroke .2s ease;cursor:pointer;}
-        a:hover .area,.area:hover{z-index:1;fill:#f6fafd;stroke:#07a59f;stroke-width:1.5;filter:url(#map-shadow);}
-        .area.select{fill:#cbede7;}
-        a:focus .area{outline:none;filter:url(#map-shadow);}
-        .area-label{fill:#609093;font-size:10px;font-weight:600;line-height:12px;}
-        a:hover{
-            .area-label{fill:#009991;}
+        .area-label{fill:#609093;font-size:9px;font-weight:500;line-height:11px;
+            use{display:none;}
+            text{dominant-baseline:middle;text-anchor:middle;}
+        }
+        a{position:relative;
+            &:hover,&.is-selected{
+                .area{z-index:1;fill:#cbede7;stroke:#07a59f;stroke-width:1.5;filter:url(#map-shadow);}
+                .area-label{fill:#09928d;font-weight:600;}
+            }
+            &:focus{
+                .area{outline:none;filter:url(#map-shadow);}
+            }
+            /*&.is-selected{z-index:1;
+                .area{fill:#cbede7;stroke-width:1.5;filter:url(#map-shadow);}
+                .area-label{fill:#fff;font-size:13px;font-weight:600;line-height:15px;
+                    use{display:inline;}
+                    text{stroke:#09928d;stroke-width:4px;paint-order:stroke;stroke-linecap:round;stroke-linejoin:round;text-anchor:start;}
+                }
+            }*/
+        }
+        .detail-map{display:none;position:absolute;z-index:2;top:49%;left:50%;width:715px;height:409px;background:url(../images/main/map/mapBg2.png) #f6fafd no-repeat 0 0;transform:translate(-50%, -50%);
+            &::before{display:block;position:absolute;z-index:2;background-repeat:no-repeat;background-position:0 0;background-size:100% auto;}
+            .detail-map-inner{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+            .area-label{font-size:8px;line-height:10px;
+                &.boxText{background:#fff;border:1px solid #599794;border-radius:14px;}
+            }
+            svg{display:block;position:absolute;}
+            &.dmCwg{background-size:147% auto;background-position:-51px 25px;
+                &::before{top:337px;left:348px;width:146px;height:35px;background-image:url(../images/main/map/cwg-line.svg);}
+                .detail-map-inner{width:643px;height:363px;}
+                .cwg-oc{top:3px;left:0;width:414px;height:257px;}
+                .cwg-bi{top:0;left:343px;width:284px;height:177px;}
+                .cwg-ns{top:121px;left:358px;width:286px;height:186px;}
+                .cwg-ogj{top:155px;left:275px;width:141px;height:142px;}
+                .cwg-ys{top:262px;left:307px;width:154px;height:87px;}
+                .cwg-nd1{top:305px;left:329px;width:42px;height:36px;}
+                .cwg-nd2{top:306px;left:361px;width:42px;height:35px;}
+                .cwg-ua{top:326px;left:337px;width:68px;height:35px;}
+            }
+            &.dmSdg{background-size:69% auto;background-position:136px -56px;
+                &::before{top:45px;left:275px;width:146px;height:186px;background-image:url(../images/main/map/sdg-line.png);}
+                .area-label{font-size:16px;line-height:18px;}
+                .detail-map-inner{width:542px;height:400px;}
+                .sdg-mw{top:0;left:358px;width:185px;height:179px;}
+                .sdg-ns{top:55px;left:316px;width:107px;height:139px;}
+                .sdg-yms{top:74px;left:271px;width:57px;height:50px;}
+                .sdg-ja{top:99px;left:254px;width:26px;height:18px;}
+                .sdg-td{top:113px;left:265px;width:13px;height:20px;}
+                .sdg-sa{top:116px;left:253px;width:17px;height:18px;}
+                .sdg-gc{top:120px;left:264px;width:25px;height:17px;}
+                .sdg-yu{top:133px;left:266px;width:17px;height:12px;}
+                .sdg-ya1{top:98px;left:263px;width:54px;height:61px;}
+                .sdg-ya2{top:99px;left:266px;width:67px;height:80px;}
+                .sdg-ni{top:155px;left:238px;width:106px;height:77px;}
+                .sdg-gd{top:128px;left:276px;width:115px;height:134px;}
+                .sdg-mu{top:221px;left:217px;width:135px;height:179px;}
+            }
+            &.dmSwg{background-size:115% auto;background-position:98px -276px;
+                &::before{top:9px;left:348px;width:146px;height:121px;background-image:url(../images/main/map/swg-line.svg);}
+                .detail-map-inner{width:493px;height:422px;}
+                .swg-sj1{top:7px;left:308px;width:32px;height:26px;}
+                .swg-sc{top:18px;left:283px;width:27px;height:27px;}
+                .swg-sj2{top:26px;left:303px;width:38px;height:24px;}
+                .swg-mc{top:40px;left:310px;width:46px;height:30px;}
+                .swg-sg2{top:53px;left:305px;width:26px;height:30px;}
+                .swg-sg1{top:60px;left:325px;width:30px;height:21px;}
+                .swg-sgj{top:37px;left:249px;width:68px;height:80px;}
+                .swg-sn{top:59px;left:282px;width:58px;height:53px;}
+                .swg-bp{top:69px;left:314px;width:46px;height:75px;}
+                .swg-ni{top:90px;left:150px;width:187px;height:167px;}
+                .swg-hd{top:221px;left:188px;width:142px;height:191px;}
+            }
+            &.dmHdg{background-size:136% auto;background-position:105px -129px;
+                &::before{top:140px;left:419px;width:116px;height:166px;background-image:url(../images/main/map/hdg-line.svg);}
+                .detail-map-inner{width:504px;height:400px;}
+                .hdg-osm{top:0;left:23px;width:298px;height:215px;}
+                .hdg-gs2{top:97px;left:235px;width:145px;height:101px;}
+                .hdg-bmsj{top:160px;left:303px;width:84px;height:59px;}
+                .hdg-ucsb{top:146px;left:369px;width:46px;height:60px;}
+                .hdg-bm1{top:197px;left:352px;width:36px;height:22px;}
+                .hdg-ose{top:138px;left:0;width:165px;height:213px;}
+                .hdg-gn{top:186px;left:89px;width:177px;height:214px;}
+                .hdg-gs1{top:141px;left:176px;width:147px;height:205px;}
+                .hdg-bd1{top:192px;left:290px;width:72px;height:45px;}
+                .hdg-bd2{top:219px;left:322px;width:40px;height:33px;}
+                .hdg-gg{top:223px;left:289px;width:50px;height:63px;}
+            }
+        }
+        .is-selected{
+            + .detail-map{display:block;}
         }
     }
     .category{flex:0 0 30.915032%;width:30.915032%;padding:55px 12px 0 58px;
@@ -129,7 +218,7 @@ main{position:relative;z-index:1;padding:30px 0 0;
         &::after{right:0;}
         .title{margin:0 0 0 20px;}
         .categoryWrap{display:flex;flex-wrap:wrap;width:100%;margin:25px 0 0;}
-        label{display:block;position:relative;flex:0 0 calc(33.333333% - 6px);width:calc(33.333333% - 6px);height:129px;padding:85px 0 0;background:#fff;border-radius:25px;
+        label,.label{display:block;position:relative;flex:0 0 calc(33.333333% - 6px);width:calc(33.333333% - 6px);height:129px;padding:85px 0 0;background:#fff;border-radius:25px;
             &.category4,&.category5{flex:0 0 calc(50% - 6px);width:calc(50% - 6px);}
             &.category1,&.category4{margin:10px 6px 0 0;}
             &.category2{margin:10px 3px 0;}
@@ -205,11 +294,11 @@ main{position:relative;z-index:1;padding:30px 0 0;
     }
     .reservationInnerWrap{position:relative;z-index:1;width:100%;max-width:1530px;margin:0 auto;padding:1px 0 0;}
     .category{margin:20px 0 30px 820px;padding:0 0 1px;
-        .cateDiv{display:flex;margin:0 0 14px;
-            strong{display:flex;flex:0 0 140px;width:140px;margin:7px 0 0;color:#303056;font-size:19px;font-weight:600;line-height:21px;
+        .cateDiv{display:flex;flex-wrap:wrap;position:relative;margin:0 0 14px;padding:0 0 0 140px;
+            strong{display:block;position:absolute;top:0;left:0;width:140px;margin:4px 0 0;color:#303056;font-size:19px;font-weight:600;line-height:21px;
                 svg{flex:0 0 20px;width:26px;height:20px;margin:1px 10px 0 0;color:#ed778f;}
             }
-            button{display:flex;height:auto;padding:7px 15px 10px;border:1px solid #ded9de;border-radius:18px;color:#717a8b;font-size:17px;line-height:19px;
+            button{display:flex;height:auto;padding:7px 15px 10px;margin:0 8px 8px 0;border:1px solid #ded9de;border-radius:18px;color:#717a8b;font-size:17px;line-height:19px;
                 svg{display:none;flex:0 0 13px;width:13px;height:11px;margin:5px 8px 0 0;}
                 span{font-size:17px;line-height:19px;}
                 &.selected{background:#fdf6f6;border-color:#f07b70;color:#f95c4f;
@@ -229,8 +318,8 @@ main{position:relative;z-index:1;padding:30px 0 0;
             &.next{right:-90px;}
         }
     }
-    .reserve-item-list{display:flex;justify-content:flex-start;flex-wrap:wrap;overflow:hidden;width:calc(100% + 30px + 60px);max-width:1600px;height:460px;margin:0 0 0 -30px;padding:0 40px 60px 0;
-        .slide-item{flex:0 0 calc(25% - 30px);position:relative;margin:0 0 70px 30px;background:#fff;border-radius:40px;box-shadow:0 20px 30px rgba(50,80,125,.1);
+    .reserve-item-list{display:flex;justify-content:flex-start;flex-wrap:wrap;overflow:hidden;width:100%;max-width:1600px;height:460px;margin:0 auto;padding:5px 0 60px;
+        .slide-item{flex:0 0 calc(25% - 30px);position:relative;margin:0 15px 70px;background:#fff;border-radius:40px;box-shadow:10px 10px 15px rgba(50,80,125,.1);
             a{display:block;position:relative;z-index:0;width:100%;height:400px;padding:40px;
                 &::before,&::after{display:block;position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;background:#fff;}
                 &::before{opacity:0;background:linear-gradient(180deg,#ed709d 0%,#ec8a6c 100%);border-radius:40px;transition:opacity .3s ease;}
@@ -288,13 +377,16 @@ main{position:relative;z-index:1;padding:30px 0 0;
             }
         }
     }
-    .tab-button{display:flex;justify-content:center;align-items:flex-start;position:relative;z-index:1;height:auto;padding:0 34px;border:none;background:#fff;border-radius:30px;box-shadow:0 20px 20px rgba(50,80,125,.06);
+    .tab-button{display:flex;justify-content:center;align-items:flex-start;position:relative;z-index:1;height:auto;padding:0 34px;border:none;background:#fff;border-radius:30px;box-shadow:0 20px 20px rgba(50,80,125,.06);font-family:SB;
         .svgBg{display:none;position:absolute;left:0;right:0;bottom:-9px;width:52px;height:22px;margin:0 auto;}
         span{display:flex;justify-content:center;align-items:flex-start;position:relative;padding:19px 0 16px;color:#828995;@extend %font-SB;font-size:23px;line-height:25px;}
         .icon{display:none;flex:0 0 21px;width:21px;height:21px;margin:0 15px 0 0;}
+        &:hover{font-weight:500;}
         &.current{background:linear-gradient(300deg, #009f99 0%, #42c0a7 78%);
-            .svgBg{display:block;}
-            span{color:#fff;font-weight:700;}
+            .svgBg{display:block;
+                &.dark{display:none;}
+            }
+            span{color:#fff;font-weight:500;}
             .icon{display:block;}
         }
     }
@@ -323,7 +415,138 @@ main{position:relative;z-index:1;padding:30px 0 0;
     }
 }
 
+.activeContrast{background:#0a0e11;
+    main{
+        &::before{background:linear-gradient(to bottom, rgb(15, 39, 36) 75%, rgba(15, 39, 36, 0) 100%)}
+    }
+    .mainContentGroup{
+        .reservationSearchWeather{
+            strong{color:#fff;}
+            .weather-wrap{
+                .wtText{color:#fff;text-shadow:0 7px 40px rgba(255,255,255)}
+                .wtIcon{background:rgba(255,255,255,.19);box-shadow:0 10px 40px rgba(18,48,115,.1)}
+                .dsText{color:#fff;}
+            }
+            .search-wrap{
+                &::before{background:#0a0e11;border:3px solid #113430;box-shadow:0 20px 50px rgba(87,164,230,.1);}
+                input[type='text']{background:transparent;}
+            }
+        }
+        .event{
+            button{
+                &.slideControl{background:#0f2825;
+                    svg{color:#fff;}
+                }
+            }
+            .controller-wrap{background:#0f2825;
+                .count{color:#fff;}
+            }
+        }
+    }
+    .reservationFind{
+        &::before{background:linear-gradient(290deg, #143837 0%, #17544b 73%);}
+    }
+    .reserveStep{
+        .title{color:#fff;
+            span{color:rgba(255,255,255,0.6);}
+        }
+        .map{
+            .mapInnerWrap{background:linear-gradient(290deg, #165653 0%, #1c6354 73%);}
+        }
+        .category{
+            &::before,&::after{background-image:url(../images/main/map/mapBgPtrnRound-D.png);}
+            label,.label{background:#0f2725;
+                span{color:#fff;}
+                input[type='radio']:checked + span{color:#068f47;}
+            }
+        }
+        .state{
+            &::before{background-image:url(../images/main/map/mapBgPtrnRound-D.png);}
+            .stateWrap{background:#0f2725;
+                .radioWrap{
+                    span{color:#fff;}
+                }
+                p{color:#fff;}
+                button{background:#0e7a4e;}
+            }
+        }
+    }
+    .reservationList{
+        &::after{opacity:0.1;}
+        h3{color:#fff;}
+        .category{
+            .cateDiv{
+                strong{color:#fff;}
+                button{background:#202427;color:#fff;
+                    &.selected{background:#202427;border-color:#be645d;color:#f35a4e;}
+                }
+            }
+        }
+        .reserve-item-list{
+            .slide-item{background:#2b2d30;
+                a{
+                    &::after{background:#2b2d30;}
+                }
+                .title{color:#fff;}
+                .info{color:#fff;}
+                .filter{background:#0b0e11;
+                    em{color:#717a8b;}
+                }
+            }
+        }
+    }
+    .mainContentGroup{
+        &.group3{
+            &::before{opacity:.2;}
+            &::after{opacity:.5;background:linear-gradient(to top, rgb(56, 82, 42) 20%, rgba(56, 82, 42, 0) 60%)}
+        }
+    }
+    .boardGroup{
+        h3{color:#fff;}
+        .tab-button{background:transparent;border:1px solid #fff;
+            &.current{background:linear-gradient(300deg, #143a38 0%, #195d53 78%);border:none;
+                .svgBg{display:none;
+                    &.dark{display:block;}
+                }
+            }
+        }
+        .tab-content{
+            li{border-color:rgba(255,255,255,.1);
+                a{color:#717a8b;
+                    &:hover{color:#fff;
+                        em{color:#fff;}
+                    }
+                }
+            }
+        }
+        .more{background:transparent;border:1px solid #fff;}
+    }
+    .facilitiesGroup{background:rgba(255,255,255,.1);
+        h3{color:#fff;}
+        a{color:#717a8b;
+            &::before{background:rgba(255,255,255,.1);}
+            &:hover{background:#1a5e53;border-color:#1a5e53;color:#fff;
+                svg{color:#fff;}
+            }
+        }
+    }
+}
+
+.slick-list{display:flex;flex:0 0 100%;width:100%;}
+.slick-track{display:flex;flex:0 0 100%;width:100% !important;}
+
 @media all and (min-width:1000px){
+    .reserveStep{
+        .category{
+            .label{
+                &:hover{
+                    span{color:#068f47;
+                        &::after{opacity:1;}
+                    }
+                }
+            }
+        }
+    }
     .boardGroup{
         .more{
             &:hover{background:#1d2845;color:#fff;}
@@ -364,5 +587,399 @@ main{position:relative;z-index:1;padding:30px 0 0;
         }
     }
 }
-@media all and (max-width:1000px){
+@media all and (max-width:1590px) {
+    .mainContentGroup{
+        .colgroup1{width:calc(100% - 40px);margin:0 20px 30px;}
+        .event{
+            .controller{position:relative;}
+            .controller-wrap{bottom:-32px;}
+            button{
+                &.prev,&.next{top:-25px;}
+                &.prev{left:228px;}
+                &.next{right:228px;}
+            }
+        }
+    }
+    .reservationFind{
+        &::before{right:0;border-radius:130px 0 0 130px;}
+    }
+    .reservationList{
+        h3{left:20px;}
+        .category{margin:20px 0 30px 740px;}
+        .reservationInnerWrap{max-width:initial;padding:1px 20px;}
+        .reserve-item-list{
+            .slide-item{}
+        }
+        .controller{top:70px;left:600px;right:initial;bottom:initial;
+            button{
+                &.prev{left:0;}
+                &.next{left:70px;right:initial;}
+            }
+        }
+    }
+    .mainContentGroup{
+        &.group3{
+            .groupInnerWrap{padding:0 20px;}
+        }
+    }
+}
+@media all and (max-width:1490px) {
+    .mainContentGroup{
+        .reservationSearchWeather{flex:0 0 calc(100% - 360px - 100px);width:calc(100% - 360px - 100px);margin:0 100px 0 0;}
+        .event{flex:0 0 360px;width:360px;
+            .slide-list{width:100%;margin:0;
+                .slide-item{margin:0;
+                    &:first-child{margin:0;}
+                }
+            }
+            button{
+                &.prev{left:56px;}
+                &.next{right:56px;}
+            }
+        }
+    }
+    .reservationList{
+        .reserve-item-list{
+            .slide-item{
+                a{padding:30px 25px;}
+                .info{display:block;position:relative;padding:0 0 0 40px;word-break:break-all;
+                    svg{display:none;}
+                    em{position:absolute;top:0;left:0;margin:0;}
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:1460px) {
+    .reservationList{overflow:hidden;padding:20px 0 0;
+        &::after{top:-24px;left:470px;right:inherit;}
+        .controller{top:10px;left:370px;}
+        .category{margin:20px 0 30px 44%;}
+    }
+}
+@media all and (max-width:1350px) {
+    .boardGroup{flex:720px;width:720px;}
+    .facilitiesGroup{flex:calc(100% - 720px - 25px);width:calc(100% - 720px - 25px);margin:0 0 0 25px;padding:25px;
+        &::before{width:60px;height:59px;background-size:100% auto;}
+    }
+}
+@media all and (max-width:1300px) {
+    .reserveStep{
+        .map{flex:0 0 calc(100% - 330px - 320px);width:calc(100% - 330px - 320px);}
+        .category{flex:0 0 330px;width:330px;padding:55px 15px 0;}
+        .state{flex:0 0 320px;width:320px;padding:55px 15px 0;}
+    }
+}
+@media all and (max-width:1240px) {
+
+}
+@media all and (max-width:1200px) {
+    .mainContentGroup{
+        .reservationSearchWeather{flex:0 0 calc(100% - 360px - 10px);width:calc(100% - 360px - 10px);margin:0 15px 0 0;}
+    }
+    .reservationFind{height:auto;padding:1px 0 66px;
+        &::before{border-radius:50px;left:20px;right:20px;width:calc(100% - 40px);}
+    }
+    .reserveStep{flex-wrap:wrap;margin:0 20px;
+        .map{flex:0 0 100%;z-index:1;width:100%;height:520px;margin:0 0 20px;
+            .mapArea{border-radius:20px 20px 48px 48px;}
+            .mapInnerWrap{position:relative;top:initial;left:initial;width:100%;padding:38px 25px 0;border-radius:50px;}
+        }
+        .category{flex:0 0 50%;width:50%;}
+        .state{flex:0 0 50%;width:50%;
+            .stateWrap{max-width:initial;}
+        }
+    }
+    .reservationList{
+        &::after{display:none;}
+        h3{position:static;}
+        .category{margin:20px 0 30px;}
+        .controller{top:180px;left:inherit;right:20px;
+            button{
+                &.prev{left:inherit;right:70px;}
+                &.next{left:inherit;right:0;}
+            }
+        }
+    }
+    .reservationList{
+        .reserve-item-list{
+            .slide-item{flex:0 0 calc(33.333333% - 30px);}
+        }
+    }
+}
+@media all and (max-width:1060px) {
+    .mainContentGroup{
+        .reservationSearchWeather{
+            strong{height:94px;margin:55px 0 15px;
+                span{display:block;}
+            }
+            .weather-wrap{top:65px;}
+        }
+    }
+}
+@media all and (max-width:1000px) {
+    .mainBg{display:none;}
+    main{
+        &::before{border-radius:58px 58px 0 0;}
+    }
+    .mainContentGroup{
+        .reservationSearchWeather{
+            strong{height:auto;margin:35px 0 15px;font-size:24px;line-height:30px;
+                span{display:inline-block;}
+            }
+            .weather-wrap{top:10px;width:160px;height:50px;padding:0 0 0 65px;
+                .wtIcon{width:50px;height:50px;
+                    &::before{width:50px;height:50px;background-size:auto 50px;}
+                    &.WEATHER_TYPE01{background-position:0 0}
+                    &.WEATHER_TYPE02{background-position:-57px 0}
+                    &.WEATHER_TYPE03{background-position:-112px 0}
+                    &.WEATHER_TYPE04{background-position:-167px 0}
+                    &.WEATHER_TYPE05{background-position:-223px 0}
+                    &.WEATHER_TYPE06{background-position:-279px 0}
+                }
+                .wtText{margin:9px 0 4px;font-size:15px;line-height:17px;}
+                .dsText{font-size:14px;line-height:16px;}
+            }
+            .search-wrap{
+                &::before{right:20px;height:60px;}
+                .form-wrap{padding:0 50px 0 53px;}
+                .inner-wrap{height:60px;padding:6px 0 0;}
+                .srcIcon{top:21px;left:19px;}
+                input[type='text']{font-size:16px;line-height:18px;}
+                button[type='submit']{width:50px;height:50px;background-size:100% auto;}
+            }
+        }
+    }
+    .reservationFind{margin:0 auto 70px;padding:1px 0;
+        &::before{display:none;}
+    }
+    .reserveStep{
+        .title{font-size:19px;line-height:21px;
+            span{font-size:13px;line-height:15px;}
+        }
+        .map{height:490px;
+            .mapInnerWrap{height:490px;padding:18px 25px 0;}
+            .mapSelect{
+                .initialSelect{flex:0 0 40px;width:40px;height:40px;}
+                .main-customSelect{height:40px;
+                    select{height:40px;padding:0 40px 0 10px;letter-spacing:-1px;}
+                    i{right:4px;width:30px;height:30px;}
+                }
+            }
+        }
+        .category,.state{padding:20px;border-radius:30px;
+            &::before,&::after{display:none;}
+        }
+        .category{background:linear-gradient(120deg, #bbe6e7 0%, #c6ecd6 100%);
+            .categoryWrap{margin:15px 0 0;}
+            label,.label{height:90px;padding:55px 0 0;
+                &::before{top:18px;width:33px;height:33px;background-size:auto 33px;}
+                span{font-size:15px;line-height:17px;}
+                &.category1{
+                    &::before{background-position:-2px 0;}
+                }
+                &.category2{
+                    &::before{background-position:-40px 0;}
+                }
+                &.category3{
+                    &::before{background-position:-79px 0;}
+                }
+                &.category4{
+                    &::before{background-position:-117px 0;}
+                }
+                &.category5{
+                    &::before{background-position:-156px 0;}
+                }
+            }
+        }
+        .state{background:linear-gradient(120deg, #c2e9db 0%, #d9f5b9 100%);
+            .stateWrap{height:200px;margin:15px 0 0;
+                .radioWrap{margin:0;padding:20px 0;
+                    span{padding:0 0 0 20px;font-size:15px;line-height:17px;
+                        &::before{width:16px;height:16px;}
+                        &::after{width:8px;height:8px;}
+                    }
+                }
+                p{margin:20px 30px 0;font-size:14px;line-height:18px;}
+                button{font-size:16px;line-height:18px;
+                    svg{width:18px;height:18px;margin:1px 5px 0 0;}
+                }
+            }
+        }
+    }
+    .reservationList{margin:0;overflow:hidden;
+        &::before{top:210px;left:inherit;right:-50px;width:320px;height:350px;background-size:100% auto;transform:rotateY(-180deg);}
+        h3{font-size:22px;line-height:24px;
+            span{margin:0 0 5px;}
+        }
+        .category{
+            .cateDiv{
+                strong{display:flex;justify-content:center;align-items:center;flex:0 0 120px;width:120px;font-size:16px;line-height:18px;}
+                button{
+                    span{font-size:14px;line-height:16px;}
+                }
+            }
+        }
+        .reserve-item-list{height:375px;
+            .slide-item{
+                a{height:280px;padding:30px 25px 60px;}
+                .state{width:68px;height:33px;padding:4px 0 0;box-sizing:border-box;
+                    svg{left:50%;width:68px;height:32px;transform:translateX(-50%);}
+                    span{font-size:14px;letter-spacing:-1px;line-height:16px;}
+                }
+                .keyword{margin:0 0 15px;
+                    i{font-size:14px;line-height:16px;}
+                }
+                .title{height:36px;margin:0 0 35px;font-size:16px;line-height:18px;}
+                .info{margin:6px 0 0;font-size:14px;line-height:16px;}
+                .filter{bottom:20px;
+                    em{font-size:14px;line-height:16px;}
+                }
+            }
+        }
+        .controller{display:none;}
+    }
+    .mainContentGroup{
+        &.group3{
+            &::after{right:-470px;bottom:90px;}
+            .groupInnerWrap{display:block;}
+        }
+    }
+    .boardGroup{width:100%;height:280px;margin:0;
+        h3{position:static;margin:0 0 15px;font-size:22px;line-height:24px;}
+        .more{width:36px;height:36px;
+            svg{flex:0 0 14px;height:14px;}
+        }
+        .board-tab{
+            .tab-element{
+                &:first-child{margin:0;}
+                &:last-child{
+                    .tab-button{margin:0 0 0 18px;
+                        &::before{top:17px;left:-11px;width:4px;height:4px;}
+                    }
+                }
+            }
+        }
+        .tab-button{padding:0 20px;
+            .icon{flex:0 0 14px;width:14px;height:14px;margin:0 5px 0 0;}
+            span{padding:12px 0 7px;font-size:16px;line-height:18px;}
+        }
+        .tab-content{padding:45px 0 0;
+            li{padding:0 0 0 15px;
+                &::before{top:22px;width:4px;height:4px;}
+                a{padding:14px 100px 15px 0;font-size:14px;line-height:18px;
+                    span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+                    em{top:14px;font-size:14px;line-height:18px;}
+                }
+            }
+        }
+    }
+    .facilitiesGroup{width:100%;margin:20px 0 0;padding:20px;border-radius:20px;
+        &::before{top:-5px;right:15px;}
+        h3{margin:0 0 10px;font-size:22px;line-height:24px;}
+        a{padding:10px 0 11px;font-size:15px;line-height:17px;
+            &::before{left:0;right:0;}
+        }
+    }
+}
+@media all and (max-width:820px) {
+    .mainContentGroup{
+        .colgroup1{display:block;}
+        .reservationSearchWeather{width:100%;margin:0;padding:15px 0 0;
+            strong{margin:0 0 15px;}
+            .weather-wrap{top:0;}
+        }
+        .event{width:100%;height:initial;margin:20px 0 0;
+            .slide-list{height:initial;
+                a{height:initial;margin:0 5px;
+                    img{position:relative;left:50%;height:initial;transform:translateX(-50%);}
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:720px) {
+    .reservationList{margin:0;
+        .reserve-item-list{
+            .slide-item{flex:0 0 calc(50% - 20px);margin:0 10px 30px;}
+        }
+    }
+}
+@media all and (max-width:640px) {
+    .reservationList{
+        .category{margin:10px 0 15px;
+            .cateDiv{flex-wrap:wrap;
+                strong{flex:0 0 100%;margin:7px 0 10px;
+                    + button{margin:0 5px 5px 0;}
+                }
+                button{margin:0 5px 5px 0;}
+            }
+        }
+        .reserve-item-list{height:315px;padding:5px 0 0;}
+    }
+}
+@media all and (max-width:600px) {
+    main{padding:1px 0 0;
+        &::before{top:90px;}
+    }
+    .mainContentGroup{
+        .reservationSearchWeather{padding:25px 0 0;
+            .weather-wrap{display:none;}
+            strong{margin:0 0 10px;text-align:center;}
+        }
+    }
+    .reservationFind{
+        &::before{display:none;}
+    }
+    .reserveStep{display:block;margin:0 20px;
+        .map{height:initial;margin:0;
+            .mapInnerWrap{height:initial;padding:25px;border-radius:40px;}
+            .mapArea{display:none;}
+            .title-area{display:block;}
+            .title{width:100%;margin:0 0 10px;}
+            .mapSelect{width:100%;}
+        }
+        .category,.state{width:100%;border-radius:20px;
+            &::before,&::after{display:none;}
+        }
+        .category{margin:-15px 0 0;padding:40px 15px 20px;background:linear-gradient(120deg, #a1d8e7 0%, #b4e4d0 90%);
+            .title{margin:0;}
+        }
+        .state{padding:20px 15px;background:linear-gradient(120deg, #a6dde8 0%, #b9e4c5 70%);
+            .title{margin:0;}
+        }
+    }
+}
+@media all and (max-width:570px) {
+    .reservationList{
+        .category{
+            .cateDiv{padding:0;
+                strong{justify-content:flex-start;position:static;}
+            }
+        }
+    }
+}
+@media all and (max-width:500px) {
+    .mainContentGroup{
+        .event{
+            .controller-wrap{bottom:-15px;height:45px;border-radius:30px 30px 0 0;}
+            button{
+                &.prev,&.next{display:none !important;}
+                &.slideControl{margin:0 0 0 10px;}
+            }
+        }
+    }
+    .reservationList{
+        .reservationInnerWrap{padding:1px 0;}
+        h3{margin:0 20px;}
+        .category{margin:10px 20px 15px;}
+        .reserve-item-list{
+            .slide-item{flex:0 0 calc(100% - 20px);}
+        }
+    }
+}
+@media all and (max-width:360px) {
+    .reservationList{
+        .reserve-item-list{}
+    }
 }
